@@ -18,10 +18,12 @@ To bulk import gift cards create a CSV in the following format:
 
 | Header | Description | Example |
 | --- | --- | --- |
-| Code | Gift card code | `ABCD 1234 ABCD 1234` |
-| Balance | Value of card in decimal currency | `100.00` |
+| Code | Gift card code. | `ABCD 1234 ABCD 1234` |
+| Balance | Value of card in decimal currency. | `100.00` |
 | Expires | Expiry date in `YYYY-MM-DD` format. Leave blank for no expiry. | `2025-01-01` |
 | Note | Note field (not visible to customer). | `This is a note.` |
+
+See also the [example.csv file](/example.csv).
 
 To import your CSV use the following command:
 
