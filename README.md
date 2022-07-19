@@ -8,8 +8,15 @@ Bulk gift card import tool is command line Ruby tool for [Shopify](https://www.s
 
 The bulk gift card import tool is a simple Ruby command line tool. To install the package run:
 
-```
+```shell
 bundle install
+```
+
+Create a custom app in the admin of the Shopify store you want to connect to, give the app `read_gift_cards` and `write_gift_cards` permissions. Once installed you must create a `.env` file in the following format:
+
+```shell
+SHOPIFY_DOMAIN=example.myshopify.com
+TOKEN=< token for custom app >
 ```
 
 ## Usage
@@ -27,6 +34,10 @@ See also the [example.csv file](/example.csv).
 
 To import your CSV use the following command:
 
-```
+```shell
 ruby import.rb -f example.csv
 ```
+
+## Troubleshooting
+
+A "Not found" error generally means that the gift card API endpoint has not been enabled on the store you are trying to connect to.

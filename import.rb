@@ -50,11 +50,15 @@ if session and input
   csv_in = CSV.parse(File.read(input), :headers => true)
 
   csv_in.each do |row|
-    gift_card = ShopifyAPI::GiftCard.new(session: session)
-    gift_card.note = row["Note"]
-    gift_card.initial_value = row["Balance"]
-    gift_card.code = row["Code"]
-    gift_card.expires_on = row["Expires"]
-    gift_card.save()
+    begin
+      gift_card = ShopifyAPI::GiftCard.new(session: session)
+      gift_card.note = row["Note"]
+      gift_card.initial_value = row["Balance"]
+      gift_card.code = row["Code"]
+      gift_card.expires_on = row["Expires"]
+      gift_card.save()
+    rescue => error
+      puts "Error with gift card `#{row["Code"]}`: #{error.message}"
+    end
   end
 end
