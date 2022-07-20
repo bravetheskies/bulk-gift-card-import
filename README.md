@@ -41,3 +41,12 @@ ruby import.rb -f example.csv
 ## Troubleshooting
 
 A "Not found" error generally means that the gift card API endpoint has not been enabled on the store you are trying to connect to.
+
+## Exporting a CSV from a Magento database
+
+```sql
+SELECT *
+FROM `magento_giftcardaccount`
+WHERE `is_redeemable` = 1
+AND `state` = 0;
+```
