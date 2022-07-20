@@ -45,7 +45,10 @@ A "Not found" error generally means that the gift card API endpoint has not been
 ## Exporting a CSV from a Magento database
 
 ```sql
-SELECT *
+SELECT `code` AS "Code",
+`balance` AS "Balance",
+`date_expires` AS "Expires",
+"Imported from Magento" AS "Note"
 FROM `magento_giftcardaccount`
 WHERE `is_redeemable` = 1
 AND `state` = 0;
