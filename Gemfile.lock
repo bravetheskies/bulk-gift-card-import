@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    concurrent-ruby (1.1.10)
+    concurrent-ruby (1.3.7)
     dotenv (2.7.6)
     hash_diff (1.0.0)
     httparty (0.20.0)
